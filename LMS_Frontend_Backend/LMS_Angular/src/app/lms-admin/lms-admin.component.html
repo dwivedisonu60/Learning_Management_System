@@ -1,0 +1,69 @@
+
+ <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+       <li class="nav-item">
+        <button>Dashboard</button>
+       </li>
+       
+    </ul>
+
+  
+
+   
+  </nav>
+
+    <div>
+       <div id="Mentor">
+       <label>Mentee Data</label>
+       
+        <table border="1" background-color="black" color="white" class="table table-striped">
+        <tr class="table-primary">
+        <th>ID</th>
+        <th>MenteeID</th>
+        <th>CourseID</th>
+        <th>MenteeName</th>
+        <th>CourseName</th>
+        </tr>
+        <tr class="table-secondary" *ngFor ="let mentee of MenteeData">
+        <td>{{mentee.menteeRegId}}</td>
+        <td>{{mentee.menteeId}}</td>
+        <td>{{mentee.courseId}}</td>
+        <td>{{mentee.menteeName}}</td>
+        <td>{{mentee.courseName}}</td>
+        </tr>
+
+        </table>
+
+        
+        </div>
+
+        <div id="Mentee">
+        <label position ="center" background-color="black">Mentor Data</label>
+        
+        <table border="1" background-color="black" color="white" class="table table-striped">
+        <tr class="table-primary">
+        <th>ID</th>
+        <th>MentorID</th>
+        <th>CourseID</th>
+        <th>MentorName</th>
+        <th>CourseName</th>
+        </tr>
+        <tr class="table-secondary" *ngFor ="let mentor of MentorData">
+        <td>{{mentor.mentorRegId}}</td>
+        <td>{{mentor.mentorId}}</td>
+        <td>{{mentor.courseId}}</td>
+        <td>{{mentor.mentorName}}</td>
+        <td>{{mentor.courseName}}</td>
+        </tr>
+
+        </table>
+
+       
+        </div>
+
+
+
+
+          
+    </div>
+

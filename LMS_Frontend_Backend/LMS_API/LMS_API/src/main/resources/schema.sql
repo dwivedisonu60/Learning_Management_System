@@ -1,0 +1,18 @@
+CREATE TABLE UserTable (
+    id   INTEGER      NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    Role VARCHAR(255),
+    Password VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE CourseTable (
+    CourseId   INTEGER      NOT NULL AUTO_INCREMENT,
+    CourseName VARCHAR(255) NOT NULL,
+
+
+    PRIMARY KEY (CourseId)
+);
+

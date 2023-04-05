@@ -1,0 +1,35 @@
+
+<div id="app">
+  <nav class="navbar navbar-expand " style="background-color: black;">
+    <a href="#" class="navbar-brand">Learning Management System</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/welcome" class="nav-link" routerLink="welcome"><button>Welcome</button> </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdmin">
+        <a href="/admin" class="nav-link" routerLink="admin">Admin</a>
+      </li>
+      <li class="nav-item" *ngIf="showMentor">
+        <a href="/mentor" class="nav-link" routerLink="mentor">Mentor Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showMentee">
+        <a href="/mentee" class="nav-link" *ngIf="isLoggedIn" routerLink="Mentee">Mentee Board</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register"><button>Sign Up</button></a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login"><button>Login</button></a>
+      </li>
+    </ul>
+
+   
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+
+ <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+       <li class="nav-item">
+        <button (click)="ShowDashBoardButton()">Dashboard</button>
+       </li>
+       <li class="nav-item">
+        <button (click)="ShowRegisterButton()">Register</button>
+       </li>
+    </ul>
+
+   
+  </nav>
+
+     <div id="Main">
+        <div id="leftDiv" *ngIf="showDashBoardContent">
+        <table border="1" background-color="black" color="white" class="table table-striped">
+        <tr class="table-primary">
+        <th>ID</th>
+        <th>MenteeID</th>
+        <th>CourseID</th>
+        <th>MenteeName</th>
+        <th>CourseName</th>
+        </tr>
+        <tr class="table-secondary" *ngFor ="let mentee of MenteeData">
+        <td>{{mentee.menteeRegId}}</td>
+        <td>{{mentee.menteeId}}</td>
+        <td>{{mentee.courseId}}</td>
+        <td>{{mentee.menteeName}}</td>
+        <td>{{mentee.courseName}}</td>
+        </tr>
+
+        </table>
+
+        <button (click)="ShowRegisterButton()">Register For Course As Mentor</button>
+        </div>
+       
+        <div id="rightDiv" *ngIf="showRegisterContent">
+        <br>
+         <mat-form-field appearance="fill">
+        <label >Subjects Available</label>
+         <select [(ngModel)]="selectedQuantity">
+         <option value= {{selectedQuantity}}> Select from below </option>
+         <option *ngFor="let DROPDOWN of COURSELIST" value= {{DROPDOWN}}>
+          {{DROPDOWN}}
+         </option>
+        </select>
+        </mat-form-field>
+        <button (click)="RegisterMentor()">Submit</button>
+        <div *ngIf = "isRegistration">
+        <p>Registration is Successfull</p>
+        </div>
+        </div>
+
+           
+    </div>
+
